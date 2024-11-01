@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+	<ul id="account-list">
+	{% for account in accounts %}
+		<li><a href="{{ account.url }}">
+			<img class="logo" src="{{ account.logo_url }}" alt="{{ account.site_name }} Logo" />
+			<span>{{ account.username }}</span>
+		</a></li>
+	{% endfor %}
+	</ul>
+{% endblock %}

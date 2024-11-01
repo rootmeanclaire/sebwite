@@ -1,0 +1,59 @@
+iframe {
+	border-width: 6pt;
+	margin: 4pt;
+	width: calc(100% - 2*(6pt + 4pt));
+	/* For slidwhows */
+	aspect-ratio: 14/9;
+}
+
+.logo {
+	aspect-ratio: 1;
+	height: 24pt;
+}
+
+#main-wrapper {
+	margin: auto;
+	display: flex;
+	max-width: 640px;
+	flex-direction: row;
+	flex-wrap: wrap-reverse;
+	align-items: stretch
+}
+
+#content {
+	padding: 6pt;
+	min-width: min(360px, 85vw);
+	flex: 3;
+	border: 1px solid black;
+}
+
+#navbar {
+	padding: 0;
+	margin: 0;
+	display: flex;
+	flex: 1;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	min-width: 6em;
+	border: 1px solid black;
+}
+
+#navbar > li {
+	list-style: none;
+	flex: 1;
+	padding: 6pt;
+	max-height: 12pt;
+}
+
+#account-list > li {
+	margin: 4pt;
+	list-style: none;
+}
+
+#account-list > li > a {
+	text-decoration: none;
+}
+
+#account-list > li > a > * {
+	vertical-align: middle;
+}

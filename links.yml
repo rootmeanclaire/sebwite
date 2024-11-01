@@ -1,0 +1,10 @@
+---
+accounts:
+  - site_name: LinkedIn
+    username: "@rootmeanclaire"
+    url: "https://www.linkedin.com/in/rootmeanclaire/"
+    logo_url: "https://upload.wikimedia.org/wikipedia/commons/8/81/LinkedIn_icon.svg"
+  - site_name: GitHub
+    username: "@rootmeanclaire"
+    url: "https://github.com/rootmeanclaire/"
+    logo_url: "https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg"

@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block content %}
+	<h2>CS 010A Slides</h2>
+	<p>CS 010A (formerly CS 010) is the first UC Riverside&rsquo;s intro to programming series of engineering majors. It covers C++ programming concepts from complete basics up until introducing the concept of classes. Object oriented programming is covered more completely in CS 010B (formerly CS 012).</p>
+	<p>I worked as a TA for three lab sections in Fall quarter (September 26 – December 13) of 2024. My duties included preparing slides of the information to be covered for the week&rsquo;s &ldquo;labs&rdquo; (programming assignments) and assist them in completing them.</p>
+	{% for slideshow in slides %}
+	<iframe src="https://docs.google.com/presentation/d/{{ slideshow.id }}/embed?start=false&loop=false&delayms=3000" allow="fullscreen"></iframe>
+	{% endfor %}
+{% endblock %}
