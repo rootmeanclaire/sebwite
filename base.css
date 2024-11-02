@@ -1,7 +1,28 @@
+* {
+	border-width: 4px;
+	font-family: sans;
+}
+
+body {
+	margin: 0;
+	padding: 6pt;
+}
+
+h1 {
+	width: 100%;
+	text-align: center;
+}
+
+h2 {
+	margin: 0;
+}
+
 iframe {
+	display: block;
+	margin: 12pt 0 12pt 0;
 	border-width: 6pt;
-	margin: 4pt;
-	width: calc(100% - 2*(6pt + 4pt));
+	border-color: unset;
+	width: calc(100% - 2*(6pt));
 	/* For slidwhows */
 	aspect-ratio: 14/9;
 }
@@ -14,35 +35,39 @@ iframe {
 #main-wrapper {
 	margin: auto;
 	display: flex;
-	max-width: 640px;
+	max-width: 720px;
 	flex-direction: row;
 	flex-wrap: wrap-reverse;
 	align-items: stretch
 }
 
+#main-wrapper > * {
+	margin: 1;
+	outline-style: solid;
+}
+
 #content {
-	padding: 6pt;
+	padding: 16pt;
 	min-width: min(360px, 85vw);
 	flex: 3;
-	border: 1px solid black;
 }
 
 #navbar {
 	padding: 0;
-	margin: 0;
 	display: flex;
 	flex: 1;
 	flex-direction: column;
 	flex-wrap: nowrap;
 	min-width: 6em;
-	border: 1px solid black;
 }
 
 #navbar > li {
 	list-style: none;
 	flex: 1;
-	padding: 6pt;
-	max-height: 12pt;
+	margin: 6pt 12pt 6pt 12pt;
+	max-height: 16pt;
+	font-size: 14pt;
+	text-decoration: none;
 }
 
 #account-list > li {
