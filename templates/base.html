@@ -1,16 +1,22 @@
 <html>
 	<head>
+		{% if title is defined %}
+		<title>{{ title }}</title>
+		{% endif %}
 		<link rel="stylesheet" href="style.css" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		{% block header %}{% endblock %}
 	</head>
 	<body>
+		{% if title is defined %}
+		<h1>{{ title }}</h1>
+		{% endif %}
 		<div id="main-wrapper">
 			<ul id="navbar" role="navigation">
-				<li><a href="about/index.html">about me</a></li>
-				<li><a href="projects/index.html">projects</a></li>
-				<li><a href="teaching/index.html">teaching</a></li>
-				<li><a href="links/index.html">links</a></li>
+				<li><a href="about.html">about me</a></li>
+				<li><a href="projects.html">projects</a></li>
+				<li><a href="teaching.html">teaching</a></li>
+				<li><a href="links.html">links</a></li>
 			</ul>
 			<div id="content" role="main">
 				{% block content %}{% endblock %}
