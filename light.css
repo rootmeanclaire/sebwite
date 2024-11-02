@@ -1,0 +1,10 @@
+@import url("style.css");
+
+* {
+	border-color: purple;
+	outline-color: purple;
+}
+
+body {
+	background-color: beige;
+}

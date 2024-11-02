@@ -1,0 +1,15 @@
+@import url("base.css");
+
+* {
+	color: beige;
+	border-color: beige;
+	outline-color: beige;
+}
+
+body {
+	background-color: purple;
+}
+
+iframe {
+	background-color: salmon;
+}
