@@ -42,7 +42,7 @@ iframe {
 }
 
 #main-wrapper > * {
-	margin: 1;
+	margin: 1.5px;
 	outline-style: solid;
 }
 
