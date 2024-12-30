@@ -1,18 +1,26 @@
+INDIR=content
 OUTDIR=out
 TEMPLATE_DIR=templates
-GEN_HTML=$(addprefix $(OUTDIR)/, $(subst .yml,.html,$(wildcard *.yml)))
 
-all: $(GEN_HTML)
+# All input YAML files
+IN_YML=$(shell find . -name '*.yml')
+# Input YAML files without directory prefix
+BASE_YML=$(IN_YML:./$(INDIR)/%=%)
+# HTML files to generate
+GEN_HTML=$(addprefix $(OUTDIR)/, $(BASE_YML:%.yml=%.html))
+
+all: $(OUTDIR) $(GEN_HTML)
 
 .DELETE_ON_ERROR: $(GEN_HTML)
 
-$(OUTDIR)/%.html: \
-		$(OUTDIR) $(TEMPLATE_DIR)/base.html \
-		$(TEMPLATE_DIR)/%.html %.yml
+$(OUTDIR)/%.html: $(OUTDIR) \
+		$(TEMPLATE_DIR)/base.html \
+		$(TEMPLATE_DIR)/%.html \
+		$(INDIR)/%.yml
 	./render-template.py $(notdir $(word 3,$^)) $(word 4,$^) > $@
 
 $(OUTDIR):
-	mkdir -p $(OUTDIR)
+	mkdir -p $(dir $(GEN_HTML))
 	ln -s $$(pwd)/dark.css $(OUTDIR)/style.css
 
 clean:
