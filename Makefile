@@ -9,7 +9,14 @@ BASE_YML=$(IN_YML:$(INDIR)/%=%)
 # HTML files to generate
 GEN_HTML=$(addprefix $(OUTDIR)/, $(BASE_YML:%.yml=%.html))
 
+.PHONY: all
 all: $(OUTDIR) $(GEN_HTML)
+
+# GitHub Pages doesn't like symlinks
+.PHONY: pages
+pages: all
+	rm $(OUTDIR)/style.css
+	cp $$(pwd)/dark.css $(OUTDIR)/style.css
 
 .DELETE_ON_ERROR: $(GEN_HTML)
 

@@ -5,9 +5,6 @@ on:
   # Runs on pushes targeting the default branch
   push:
     branches: ["main"]
-  # Runs on pull requests targeting the default branch
-  pull_request:
-    branches: ["main"]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -37,7 +34,7 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Build
-        run: make
+        run: make pages
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
