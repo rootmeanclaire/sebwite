@@ -1,11 +1,23 @@
-<html>
+<!doctype html>
+<html lang="en">
 	<head>
-		{% if title is defined %}
-		<title>{{ title }}</title>
+		<meta charset="utf-8" />
+		{% if title %}
+			<title>{{ title }}</title>
+			<meta property="og:title" content="{{ title }}" />
 		{% endif %}
+		<meta name="author" content="Clarity Shimoniak" />
+		{% if description %}
+			<meta name="description" content="{{ description }}" />
+		{% endif %}
+		{% block head %}{% endblock %}
+		<!-- CSS -->
 		<link rel="stylesheet" href="style.css" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		{% block header %}{% endblock %}
+		{% block styles %}{% endblock %}
+		<!-- JavaScript -->
+		{% block scripts %}{% endblock %}
+		<!-- Mobile scaling fix -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	</head>
 	<body>
 		{% if title is defined %}
