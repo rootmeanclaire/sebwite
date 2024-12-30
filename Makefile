@@ -3,9 +3,9 @@ OUTDIR=out
 TEMPLATE_DIR=templates
 
 # All input YAML files
-IN_YML=$(shell find . -name '*.yml')
+IN_YML=$(shell find $(INDIR) -name '*.yml')
 # Input YAML files without directory prefix
-BASE_YML=$(IN_YML:./$(INDIR)/%=%)
+BASE_YML=$(IN_YML:$(INDIR)/%=%)
 # HTML files to generate
 GEN_HTML=$(addprefix $(OUTDIR)/, $(BASE_YML:%.yml=%.html))
 
