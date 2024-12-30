@@ -16,7 +16,7 @@ There are three main directory trees for this website.
  - `templates` contains the layout files for each page. These are [Jinja](https://jinja.palletsprojects.com/) templates that are populated with the variables stored in the `content` directory.
  - `out` contains the generated website files. These are generated using the Makefile and ignored by git.
 
-For a page to exist, it must have a content file and a layout file with the same name in the same subdirectory of each tree. This will generate an output HTML file with the corresponding name and subdirectory in the `out` directory.
+For a page to exist, it must have a layout file (and an optional content file) with the same name in the same subdirectory of each tree. This will generate an output HTML file with the corresponding name and subdirectory in the `out` directory.
 
 
 Build System
