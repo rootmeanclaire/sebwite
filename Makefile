@@ -17,6 +17,7 @@ all: $(OUTDIR) $(GEN_HTML)
 pages: all
 	rm $(OUTDIR)/style.css
 	cp $$(pwd)/dark.css $(OUTDIR)/style.css
+	cp $$(pwd)/base.css $(OUTDIR)
 
 .DELETE_ON_ERROR: $(GEN_HTML)
 
